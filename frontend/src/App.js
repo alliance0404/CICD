@@ -6,7 +6,7 @@ function App() {
   const [token, setToken] = useState("");
   const [response, setResponse] = useState("");
 
-  const baseUrl = "http://localhost:8000"; // Change to your Laravel URL
+  const baseUrl = "vivacious-success-production.up.railway.app"; // Change to your Laravel URL
 
   const fakeLogin = async (email) => {
     setResponse("");
