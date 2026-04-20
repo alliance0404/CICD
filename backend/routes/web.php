@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth:sanctum')->get('api/me', [UserController::class, 'me']); 
+// Route::middleware('auth:sanctum')->get('api/me', [UserController::class, 'me']); 

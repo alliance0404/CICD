@@ -6,8 +6,7 @@ function App() {
   const [token, setToken] = useState("");
   const [response, setResponse] = useState("");
 
-  const baseUrl = process.env.BASE_URL; // Change to your Laravel URL
-
+  const baseUrl = "https://cicd-production-479b.up.railway.app"; // Change to your Laravel URL
   const fakeLogin = async (email) => {
     setResponse("");
     try {
@@ -22,12 +21,13 @@ function App() {
 
       const data = await res.json();
       setToken(data.token);
+
       if (res.ok) {
         // Fetch current user info
         const meRes = await fetch(`${baseUrl}/api/me`, {
           credentials: "include",
           headers: {
-            "Authorization": `Bearer ${data.token}`,
+            "Authorization": `Bearer ${token}`,
           },
         });
         const meData = await meRes.json();
@@ -62,7 +62,7 @@ function App() {
       <h1>Fake SAML Login Demo</h1>
 
       <div style={{ marginBottom: "10px" }}>
-        <button onClick={() => fakeLogin("admin@example.com")}>
+        <button onClick={() => fakeLogin("admin@example.co")}>
           Fake SAML Login as Admin
         </button>{" "}
         <button onClick={() => fakeLogin("manager@example.com")}>
