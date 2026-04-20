@@ -10,3 +10,4 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::post('/fake-saml-login', [UserController::class, 'fakeSamlLogin']);
 
+
