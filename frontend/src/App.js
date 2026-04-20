@@ -27,7 +27,7 @@ function App() {
         const meRes = await fetch(`${baseUrl}/api/me`, {
           credentials: "include",
           headers: {
-            "Authorization": `Bearer ${token}`,
+            "Authorization": `Bearer ${data.token}`,
           },
         });
         const meData = await meRes.json();
@@ -65,7 +65,7 @@ function App() {
         <button onClick={() => fakeLogin("admin@example.co")}>
           Fake SAML Login as Admin
         </button>{" "}
-        <button onClick={() => fakeLogin("manager@example.com")}>
+        <button onClick={() => fakeLogin("manager@example.co")}>
           Fake SAML Login as Manager
         </button>{" "}
         <button onClick={() => fakeLogin("user@example.com")}>
