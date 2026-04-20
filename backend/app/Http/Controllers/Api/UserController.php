@@ -11,6 +11,7 @@ class UserController extends Controller
 {
     public function me(Request $request)
     {
+        return response()->json(['aaa' => 'bbb'])
         $user = $request->user(); // authenticated user
         return response()->json([
             'id' => $user->id,
