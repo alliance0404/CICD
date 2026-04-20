@@ -6,7 +6,7 @@ function App() {
   const [token, setToken] = useState("");
   const [response, setResponse] = useState("");
 
-  const baseUrl = process.env.BASE_URL; // Change to your Laravel URL
+  const baseUrl = process.env.BASE_URL || "https://cicd-production-479b.up.railway.app"; // Change to your Laravel URL
   const fakeLogin = async (email) => {
     setResponse("");
     try {
